@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 21:44:54 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/11 23:50:29 by kkouaz           ###   ########.fr       */
+/*   Created: 2023/09/16 01:04:26 by kkouaz            #+#    #+#             */
+/*   Updated: 2023/09/16 03:25:04 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
+#include"PhoneBook.hpp"
+
 
 int main(int ac, char **av)
 {
-    char a;
-    int i, j;
-    i = 1;
-    j = 0;
-    if(av[1] == NULL)
+    PhoneBook myphonebook;
+
+    while(1)
     {
-        std :: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-    } 
-    while(i < ac)
-    {
-        j = 0;
-     
-        while(av[i][j])
-        {
-            if(av[i][j] >= 'a' && av[i][j] <= 'z')
-                a = av[i][j] - ('a' - 'A');
-                
-            else
-                a = av[i][j];
-            std ::cout << a;
-            j++;
-        }
-    i++;
+        
     }
-    return(0);
+
 }
