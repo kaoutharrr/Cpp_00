@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:12:28 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/16 02:12:51 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/18 13:48:39 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
-
+#include <string>
 class Contact
 {
     private:
@@ -23,11 +23,29 @@ class Contact
     std ::string NickName;
     std ::string PhoneNumber;
     std ::string DarkestSecret;
-    int index;
+    int index = 0;
 
     public:
-    void display(std ::string &FirstName, std ::string &LastName, std ::string &NickName
-    , std ::string &PhoneNumber,std ::string &DarkestSecret);
+    void init(std ::string &First, std ::string &Last, std ::string &Name
+    , std ::string &Number,std ::string &Secret);
+
+    void display();
         
 };
 #   endif
+
+/*
+void  Contact::init(std ::string &First, std ::string &Last, std ::string &Name
+    , std ::string &Number,std ::string &Secret)
+{
+    First = FirstName;
+    Last = LastName ;
+    Name = NickName ;
+    Number = PhoneNumber;
+    // std ::cout << "First Name :" << FirstName << "\n";
+    // std ::cout << "Last Name :" << LastName << "\n";
+    // std ::cout << "NickName :" << NickName << "\n";
+    // std ::cout << "Phone Number :" << PhoneNumber << "\n";
+
+}
+*/
