@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:12:28 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/18 13:48:39 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/19 19:54:43 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class Contact
 
     public:
     void init(std ::string &First, std ::string &Last, std ::string &Name
-    , std ::string &Number,std ::string &Secret);
-
+    , std ::string &Number,std ::string &Secret, int index);
     void display();
+    void fields();
         
 };
 #   endif

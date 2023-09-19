@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/18 13:45:34 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/19 19:54:07 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void  PhoneBook::add()
     std :: cin >> Number;
     std :: cout << "darkest secret :";
     std :: cin >>  Secret;
-   newContact.init(First, Last, Name, Number, Secret);
+   newContact.init(First, Last, Name, Number, Secret, index);
     if(index < 8)
     {
         contacts[index] = newContact;
@@ -59,15 +59,21 @@ void  PhoneBook::add()
     }
     else
         contacts[index] = newContact;
-   // newContact.display();
+    std::cout << "\033[35m";
+    std :: cout << "contact saved succussflly 😃\n";
+     std::cout << "\033[0m";
 }
-void  PhoneBook:: search(int index)
+void  PhoneBook:: search(int i)
 {
-    (void)index;
+   // (void)index;
     print();
-    // std::cout<<"hello  u wanted to SEARCH\n";
+    std ::cout << "enter the index of your conatact please :)";
+   std ::cin >> i;
    
-    // std ::cout <<"index : " ; 
-    // std::cin >> index;
-    //  std ::cout << index << std ::endl;
+    while(i < 0 || i >= index)
+    {
+        std :: cerr << "invalid index try again please :)\n";
+         std ::cin >> i;
+    }
+    contacts[i].fields();
 }
