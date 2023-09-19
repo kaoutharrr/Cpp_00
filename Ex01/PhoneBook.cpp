@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/19 19:54:07 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/19 21:07:04 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void  PhoneBook::add()
     std ::cin>> First ;
     if(First.empty())
     {
-        std :: cout <<"A saved contact can’t have empty fields \n";
+        std :: cout <<"A saved contact can't have empty fields \n";
         return;
     }
     std :: cout << "last name : ";
@@ -58,7 +58,14 @@ void  PhoneBook::add()
         index++;
     }
     else
-        contacts[index] = newContact;
+    {
+        contacts[old] = newContact;
+        old++; 
+        if(old == 8)
+        {
+            old = 0;
+        }
+    }
     std::cout << "\033[35m";
     std :: cout << "contact saved succussflly 😃\n";
      std::cout << "\033[0m";
