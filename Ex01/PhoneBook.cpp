@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/19 21:07:04 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/22 23:46:48 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ void PhoneBook::print()
 void  PhoneBook::add()
 {
     std::cout<<"please enter the following information for the new contact :\n";
-    std ::string First, Last, Name, Number, Secret;
+    std ::string First, Last, Name, Secret;
+    int Number;
     Contact newContact;
     std ::cout << "first name : ";
     std ::cin>> First ;
-    if(First.empty())
+    while(First.empty())
     {
         std :: cout <<"A saved contact can't have empty fields \n";
-        return;
+         std ::cin>> First ;
+       // return;
     }
     std :: cout << "last name : ";
     std :: cin >> Last;
@@ -49,9 +51,18 @@ void  PhoneBook::add()
     std :: cin >> Name;
     std :: cout << "phone number : ";
     std :: cin >> Number;
+    while(std :: cin.fail())
+    {
+        std::cout << "Please enter a correct Phone number\n";
+        std::cin.clear();            // Clear error flags
+        std::cin.ignore(100, '\n');
+        std :: cout << "phone number : ";
+        std :: cin >> Number;
+    }
+    
     std :: cout << "darkest secret :";
     std :: cin >>  Secret;
-   newContact.init(First, Last, Name, Number, Secret, index);
+    newContact.init(First, Last, Name, Number, Secret, index);
     if(index < 8)
     {
         contacts[index] = newContact;
@@ -59,23 +70,22 @@ void  PhoneBook::add()
     }
     else
     {
+        newContact.update(old);
         contacts[old] = newContact;
         old++; 
         if(old == 8)
-        {
             old = 0;
-        }
     }
+   
     std::cout << "\033[35m";
     std :: cout << "contact saved succussflly 😃\n";
      std::cout << "\033[0m";
 }
 void  PhoneBook:: search(int i)
 {
-   // (void)index;
     print();
     std ::cout << "enter the index of your conatact please :)";
-   std ::cin >> i;
+    std ::cin >> i;
    
     while(i < 0 || i >= index)
     {
