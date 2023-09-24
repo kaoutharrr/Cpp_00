@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/22 23:46:48 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/24 17:39:00 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,9 @@ void  PhoneBook::add()
     std :: cout << "contact saved succussflly 😃\n";
      std::cout << "\033[0m";
 }
-void  PhoneBook:: search(int i)
+void  PhoneBook:: search()
 {
+    int i;
     print();
     std ::cout << "enter the index of your conatact please :)";
     std ::cin >> i;

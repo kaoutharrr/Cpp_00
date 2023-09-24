@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:08:50 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/19 20:54:53 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/24 17:39:12 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class PhoneBook
     public:
         void   print();
         void    add();
-        void    search(int index);
+        void    search();
 };
 #   endif
