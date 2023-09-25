@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/24 17:39:00 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/09/25 05:40:28 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,59 @@ void  PhoneBook::add()
     int Number;
     Contact newContact;
     std ::cout << "first name : ";
-    std ::cin>> First ;
-    while(First.empty())
-    {
-        std :: cout <<"A saved contact can't have empty fields \n";
-         std ::cin>> First ;
-       // return;
+    std ::getline(std::cin, First);
+     if (std::cin.eof()) {
+        std::cout << "EOF encountered. Exiting add function.\n";
+        std::cin.ignore();
+        return;
     }
+    while (First.empty()) {
+        std::cout << "A saved contact can't have empty fields.\n";
+        std ::cout << "first name : ";
+        std ::getline(std::cin, First);
+          if (std::cin.eof()) {
+        std::cout << "EOF encountered. Exiting add function.\n";
+        std::cin.ignore();
+        return;
+        //return;
+    }
+   // ;
     std :: cout << "last name : ";
-    std :: cin >> Last;
-    std :: cout << " nick name  :";
-    std :: cin >> Name;
+    std ::getline(std ::cin , Last);
+    if (std::cin.eof()) {
+        std::cout << "EOF encountered. Exiting add function.\n";
+        std::cin.ignore();
+        return;
+    }
+    while (Last.empty()) {
+        std::cout << "A saved contact can't have empty fields.\n";
+        std ::cout << "last name : ";
+        std ::getline(std::cin, Last);
+        if (std::cin.eof()) {
+        std::cout << "EOF encountered. Exiting add function.\n";
+        std::cin.ignore();
+        return;
+        }
+        //return;
+    }  
+    std :: cout << "nickname  :";
+    std ::getline(std ::cin , Name);
+
+    if (std::cin.eof()) 
+    {
+        std::cout << "EOF encountered. Exiting add function.\n";
+        std::cin.ignore();
+        return;
+    }
+    while (Name.empty()) {
+        std::cout << "A saved contact can't have empty fields.\n";
+        std ::cout << "nickname : ";
+        std ::getline(std::cin, Name);
+        //return;
+    }
+
     std :: cout << "phone number : ";
-    std :: cin >> Number;
+    std ::getline(std::cin , Number);
     while(std :: cin.fail())
     {
         std::cout << "Please enter a correct Phone number\n";
@@ -80,6 +120,7 @@ void  PhoneBook::add()
     std::cout << "\033[35m";
     std :: cout << "contact saved succussflly 😃\n";
      std::cout << "\033[0m";
+}
 }
 void  PhoneBook:: search()
 {
