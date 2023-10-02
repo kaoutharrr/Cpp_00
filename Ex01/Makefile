@@ -1,6 +1,6 @@
 NAME = PhoneBook
 CC = c++
-FLAGS = -Wall -Wextra -Werror  -fsanitize=address -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 RM = rm -rf
 SRC = main.cpp Contact.cpp PhoneBook.cpp utils.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -17,4 +17,4 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
-#-std=c++98
+#

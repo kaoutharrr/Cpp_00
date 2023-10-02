@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/10/02 06:46:34 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/10/02 12:04:31 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ void  PhoneBook:: search()
         if(!std :: getline(std ::cin, str))
         {
             if(std :: cin.eof())
-               // exit(0);
-               return;
+                exit(0);
+               //return;
         }
         else
         {

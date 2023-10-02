@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:08:50 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/10/02 06:46:21 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/10/02 12:05:09 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define PHONEBOOK_HPP
 
 #include"Contact.hpp"
-
+#include <cstdlib>
 class PhoneBook
 {
     private:
