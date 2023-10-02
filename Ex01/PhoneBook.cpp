@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:47:41 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/10/01 04:41:18 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/10/02 06:46:34 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 #include <iostream>
 #include<iomanip>
 #include <string>
+#include<sstream>
 
+PhoneBook :: PhoneBook()
+{
+    index = 0;
+    old = 0;
+}
 void PhoneBook::print()
 {  
     int i = 0;
@@ -67,14 +73,27 @@ void  PhoneBook::add()
 void  PhoneBook:: search()
 {
     int i;
+    std :: string str;
     print();
-    std ::cout << "enter the index of your conatact please :)";
-    std ::cin >> i;
-   
-    while(i < 0 || i >= index)
-    {
-        std :: cerr << "invalid index try again please :)\n";
-         std ::cin >> i;
+    while(1)
+    { 
+        std ::cout << "enter the index of your conatact please :)";
+        if(!std :: getline(std ::cin, str))
+        {
+            if(std :: cin.eof())
+               // exit(0);
+               return;
+        }
+        else
+        {
+            std :: istringstream s(str);
+            if(!(s >> i) || !s.eof() || i >= index || i < 0)
+            {
+                std :: cerr << "invalid index try again please :)\n";
+            }
+            else
+                break;
+        }    
     }
     contacts[i].fields();
 }

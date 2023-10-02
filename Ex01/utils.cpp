@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 03:18:09 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/10/01 04:34:49 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/10/02 05:51:07 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void Field(std ::string& str, std ::string mode)
         if(!std ::getline(std::cin, str))
         {
             if(std::cin.eof())
-                exit(0);
+               // exit(0);
+               return;
         }
         else if (str.empty())
             std ::cerr << "A saved contact can't have emty fields !" << std :: endl;
@@ -42,12 +43,13 @@ void NumberField(int& number, std ::string mode)
         if(!std :: getline(std :: cin, s))
         {
             if(std::cin.eof())
-                exit(0);
+             //   exit(0);
+             return;
         }
         else
         {
-            std::istringstream iss(s);
-            if( !(iss >> number) || !iss.eof())
+            std::istringstream str(s);
+            if( !(str >> number) || !str.eof())
             {
                 std :: cerr << "Please enter a valid number \n";
             }

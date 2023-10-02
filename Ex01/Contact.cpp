@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 01:29:12 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/09/22 22:01:56 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/10/02 06:44:40 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,33 @@
 #include <iomanip>
 
 
+Contact :: Contact()
+{
+    index = 0;
+}
+void    set(std ::string str)
+{
+    std :: string s;
+
+    if(str.length() > 10)
+    {
+        s = str.substr(0, 9);
+        std :: cout << s << "." << "|";
+    }
+    else
+        std ::cout << std :: setw(10) << str << "|";
+
+}
+
 void  Contact::display()
 {
+    std :: string str;
+
     std ::cout << std :: setw(10) << index  << "|";
-    std ::cout << std ::setw(10) <<FirstName << "|";
-    std ::cout << std ::setw(10) << LastName << "|" ;
-    std ::cout << std ::setw(10)  << NickName << "\n" ;
+    set(FirstName);
+    set(LastName);
+    set(NickName);
+    std :: cout << "\n";
 }
 
 void  Contact::init(std ::string &First, std ::string &Last, std ::string &Name
@@ -38,6 +59,7 @@ void  Contact::fields()
     std ::cout << "last name  : " << LastName << "\n" ;
     std ::cout << "nick name  : " << NickName << "\n" ;
     std ::cout << "phone number : " << PhoneNumber << "\n";
+    std :: cout << "darkest secret : " << DarkestSecret << std :: endl;
 }
 void Contact :: update(int old)
 {
